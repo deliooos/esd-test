@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz - {{ company }}{% endblock %}
+
+{% block body %}
+    <main class="mt-10 px-4">
+        <a href="{{ path('app_home') }}" class="underline">Retour à l'accueil</a>
+        <h1 class="font-black text-3xl text-gray-800 uppercase">Quiz</h1>
+        <p>Répondez à toutes les questions ci-dessous. Vous ne serez inscrit au concours que si vous répondez juste à toutes les questions.</p>
+        <div class="mt-10">
+            {{ form_start(form, {attr: {'class': 'flex flex-col gap-5'}}) }}
+                <div class="flex flex-col gap-2">
+                    {{ form_label(form.founder, '1. Quel est le nom du fondateur du Consumer Electronics Show ?', {label_attr: {'class': 'text-xl text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.founder.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.founder) }}
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    {{ form_label(form.year, '2. En quelle année est lancé le CES pour la première fois ?', {label_attr: {'class': 'text-xl text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.year.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.founder) }}
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    {{ form_label(form.city, '3. Dans quelle ville s’est déroulé ce premier salon ?', {label_attr: {'class': 'text-xl text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.city.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.founder) }}
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    {{ form_label(form.tech, '4. Quelle technologie fut présentée en avant-première au CES de 1996 ?', {label_attr: {'class': 'text-xl text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.tech.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.founder) }}
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    {{ form_label(form.presidentInterventions, '5. Quel nom connu portent les interventions des présidents d’entreprises au CES ?', {label_attr: {'class': 'text-xl text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.presidentInterventions.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.founder) }}
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

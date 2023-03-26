@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeu Concours - {{ company }}{% endblock %}
+
+{% block body %}
+        <main class="mt-10 px-4">
+        <div class="fixed bottom-0 left-0 w-full">
+            <a href="{{ path('app_quiz') }}" class="block w-full p-5 font-black text-2xl text-gray-100 text-center uppercase bg-cover" style="background-image: url('{{ asset('assets/ces-blue-pattern.jpg') }}')">Participer</a>
+        </div>
+        <img src="{{ asset('assets/ces-logo.webp') }}" alt="Logo du CES" class="w-56 mx-auto my-10">
+        <div class="flex flex-col items-center gap-3">
+            <h1 class="mb-2 font-black text-4xl text-gray-800 text-center uppercase">Remportez un séjour au CES !</h1>
+            <h2 class="font-bold text-lg text-center">Répondez à une série de questions et tentez de gagner un voyage de 3 jours à Las Vegas avec entrées au CES pour 2 personnes, et 10 drones DJI Mavic 2 !</h2>
+            <small class="-mt-2 mb-4 text-center font-bold">Durée : environ 5 minutes</small>
+            <p>Répondez correctement à 5 questions pour être qualifié(e) au jeu concours CES 2022.</p>
+            <p>Si vous répondez juste à toutes les questions, vous participerez définitivement au jeu et vous pourrez gagner un voyage à Las Vegas, pour une durée de 3 jours, avec entrées gratuites au CES pour 2 personnes, et 10 drones DJI Mavic 2.</p>
+            <a href="{{ path('app_general_conditions') }}" class="font-bold underline">Conditions générales d'utilisation</a>
+        </div>
+    </main>
+{% endblock %}
