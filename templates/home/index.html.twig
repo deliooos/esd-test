@@ -17,4 +17,14 @@
             <a href="{{ path('app_general_conditions') }}" class="font-bold underline">Conditions générales d'utilisation</a>
         </div>
     </main>
+    {% block javascripts %}
+        <script>
+            console.table([
+                { 'Gagnant du voyage': '{{ tripWinner }}' },
+                {% for gagnant in dronesWinners %}
+                    { 'Gagnants des drones': '{{ gagnant }}' },
+                {% endfor %}
+            ])
+        </script>
+    {% endblock %}
 {% endblock %}

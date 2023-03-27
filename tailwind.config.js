@@ -8,7 +8,12 @@ module.exports = {
     extend: {
       fontFamily: {
         main: ['Inter, sans-serif'],
-      }
+      },
+      colors: {
+        primary: {
+          500: '#48bd9c',
+        }
+      },
     },
   },
   plugins: [

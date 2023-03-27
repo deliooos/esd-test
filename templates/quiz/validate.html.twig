@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fin du quiz - {{ company }}{% endblock %}
+
+{% block body %}
+    <main class="mt-10 px-4">
+        <a href="{{ path('app_home') }}" class="text-red-500 underline">Annuler</a>
+        <h1 class="font-black text-3xl text-gray-800 uppercase">Validation</h1>
+        <p>Veuillez renseigner vos informations personnelles pour compléter votre inscription au concours. Vous serez contacté par via le mail renseigné si vous remportez un des prix.</p>
+        <div class="mt-10">
+            {{ form_start(form, {attr: {'class': 'flex flex-col gap-5'}}) }}
+                <div class="flex flex-col">
+                    {{ form_label(form.firstName, 'Prénom', {label_attr: {'class': 'text-gray-400'}}) }}
+                    {{ form_widget(form.firstName, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                    <div class="form-errors">
+                        {{ form_errors(form.firstName) }}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    {{ form_label(form.lastName, 'Nom de famille', {label_attr: {'class': 'text-gray-400'}}) }}
+                    {{ form_widget(form.lastName, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                    <div class="form-errors">
+                        {{ form_errors(form.lastName) }}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    {{ form_label(form.mail, 'Mail', {label_attr: {'class': 'text-gray-400'}}) }}
+                    {{ form_widget(form.mail, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                    <div class="form-errors">
+                        {{ form_errors(form.mail) }}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    {{ form_label(form.age, 'Âge', {label_attr: {'class': 'text-gray-400'}}) }}
+                    <div>
+                        {% for choice in form.children.age.children %}
+                            <div class="flex gap-2">
+                                {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-errors">
+                        {{ form_errors(form.age) }}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    {{ form_label(form.adress, 'Adresse', {label_attr: {'class': 'text-gray-400'}}) }}
+                    {{ form_widget(form.adress, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                    <div class="form-errors">
+                        {{ form_errors(form.adress) }}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    {{ form_label(form.country, 'Pays', {label_attr: {'class': 'text-gray-400'}}) }}
+                    {{ form_widget(form.country, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                    <div class="form-errors">
+                        {{ form_errors(form.country) }}
+                    </div>
+                </div>
+                <p>Concernant le voyage à Las Vegas, si vous pensez être accompagné, veuillez renseigner les informations de votre accompagnant ci-dessous.</p>
+                <div class="flex flex-col gap-5">
+                    <span type="button" class="block bg-primary-500 w-full py-2 px-4 self-center font-black text-gray-100 text-center">Formulaire accompagnant &dArr;</span>
+
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondFirstName, 'Prénom', {label_attr: {'class': 'text-gray-400'}}) }}
+                        {{ form_widget(form.secondFirstName, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                        <div class="form-errors">
+                            {{ form_errors(form.secondFirstName) }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondLastName, 'Nom de famille', {label_attr: {'class': 'text-gray-400'}}) }}
+                        {{ form_widget(form.secondLastName, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                        <div class="form-errors">
+                            {{ form_errors(form.secondLastName) }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondMail, 'Mail', {label_attr: {'class': 'text-gray-400'}}) }}
+                        {{ form_widget(form.secondMail, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                        <div class="form-errors">
+                            {{ form_errors(form.secondMail) }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondAge, 'Âge', {label_attr: {'class': 'text-gray-400'}}) }}
+                        <div>
+                            {% for choice in form.children.secondAge.children %}
+                                <div class="flex gap-2">
+                                    {{ form_widget(choice, {attr: {'class': 'form-radio'}}) }}
+                                    {{ form_label(choice, choice.vars.label, {label_attr: {'class': ''}}) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-errors">
+                            {{ form_errors(form.secondAge) }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondAdress, 'Adresse', {label_attr: {'class': 'text-gray-400'}}) }}
+                        {{ form_widget(form.secondAdress, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                        <div class="form-errors">
+                            {{ form_errors(form.secondAdress) }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        {{ form_label(form.secondCountry, 'Pays', {label_attr: {'class': 'text-gray-400'}}) }}
+                        {{ form_widget(form.secondCountry, {attr: {'class': 'border border-gray-300 px-4 py-2 w-full'}}) }}
+                        <div class="form-errors">
+                            {{ form_errors(form.secondCountry) }}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="bg-primary-500 w-full py-2 px-4 self-center font-black text-2xl text-gray-100 text-center uppercase">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

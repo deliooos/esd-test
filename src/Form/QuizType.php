@@ -51,7 +51,7 @@ class QuizType extends AbstractType
                 'expanded' => true,
                 'choices' => [
                     'Los Angeles' => 'Los Angeles',
-                    'New York' => 'New York',
+                        'New York' => 'New York',
                     'Chicago' => 'Chicago',
                 ],
                 'constraints' => [
@@ -78,7 +78,7 @@ class QuizType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'choices' => [
-                    'Keynotes' => 'Keynotes',
+                        'Keynotes' => 'Keynotes',
                     'Tech Talks' => 'Tech Talks',
                     'Pitchs' => 'Pitchs',
                 ],

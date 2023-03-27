@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Merci - {{ company }}{% endblock %}
+
+{% block body %}
+    <main class="mt-10 px-4">
+        <h1 class="mb-2 font-black text-4xl text-primary-500 text-center uppercase">Merci pour votre participation</h1>
+        <p class="text-center">Si vous avez répondu correctement aux 5 questions posées à l'étape précédente, vous êtes désormais inscrit au concours CES. Vérifiez votre boîte mail à partir du 20 décembre 2021 ou revenez sur ce site pour connaître les résultats.</p>
+        <a href="{{ path('app_home') }}" class="block text-primary-500 underline text-center mt-5">Retour à l'accueil</a>
+    </main>
+{% endblock %}
+
